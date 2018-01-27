@@ -5,14 +5,14 @@ pipeline {
         stage('Compile') {
             steps {
                 withMaven(maven : 'maven'){
-			sh 'mvn clean compile'
-		}
+                        sh 'cd complete && mvn clean compile'
+                }
             }
         }
         stage('Test') {
             steps {
                 withMaven(maven : 'maven'){
-                        sh 'mvn clean compile'
+                        sh 'cd complete && mvn clean compile'
                 }
             }
         }
@@ -23,3 +23,4 @@ pipeline {
         }
     }
 }
+
